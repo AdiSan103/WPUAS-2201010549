@@ -1,5 +1,7 @@
 # TUGAS UAS WEB PROGRAMMING
 
+[klik deploy website online](https://wpuas-2201010549.vercel.app/)
+
 ## Identitas
 
 Nama : I Putu Adi Santika Jaya
