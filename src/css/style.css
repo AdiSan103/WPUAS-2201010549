@@ -1,5 +1,10 @@
 /* ========== design system ============= */
 
+/* tag a root */
+a {
+  text-decoration: none;
+  color: var(--color4);
+}
 /* font poppins */
 * {
  font-family: 'Poppins', sans-serif;
