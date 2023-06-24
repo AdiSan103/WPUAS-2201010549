@@ -1,3 +1,6 @@
+// aos js
+AOS.init();
+
 // navbar
 let hamburgerMenu = document.querySelector(".hamburger");
 let nav = document.querySelector("nav");
@@ -13,6 +16,10 @@ hamburgerMenu.addEventListener("click", () => {
 var swiper = new Swiper(".beranda-mySwiper-testimoni", {
   slidesPerView: 1,
   spaceBetween: 10,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: ".beranda-swiper-pagination-testimoni",
     clickable: true,
@@ -29,6 +36,10 @@ var swiper = new Swiper(".beranda-mySwiper-testimoni", {
 var swiper = new Swiper(".beranda-mySwiper-news", {
   slidesPerView: 1,
   spaceBetween: 10,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
   breakpoints: {
     768: {
       slidesPerView: 3,
