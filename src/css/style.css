@@ -29,58 +29,47 @@ html {
 .display1 {
  font-size: 5.7rem;
  font-weight: 700;
- line-height: 97px;
+
 }
 .display2 {
 font-size: 4.2rem;
 font-weight: 700;
-line-height: 73px;
 }
 .display3 {
 font-size: 3.4rem;
 font-weight: 700;
-line-height: 58px;
 }
 .heading1 {
 font-size: 2.95rem;
 font-weight: 600;
-line-height: 48px;
 }
 .heading2 {
 font-size: 2.8rem;
 font-weight: 600;
-line-height: 39px;
 }
 .heading3 {
 font-size: 2rem;
 font-weight: 600;
-line-height: 34px;
 }
 .heading4 {
 font-size: 1.8rem;
 font-weight: 600;
-line-height: 31px;
 }
 .heading5 {
 font-size: 1.7rem;
 font-weight: 600;
-line-height: 29px;
 }
 .bodytext {
 font-size: 1.4rem;
 font-weight: 500;
-line-height: 24px;
 }
 .smalltext {
 font-size: 1.2rem;
 font-weight: 500;
-line-height: 22px;
 }
 .smallertext {
 font-size: 1rem;
-line-height: 22px;
 }
-
 /* body */
 body {
  background-color: var(--color3);
