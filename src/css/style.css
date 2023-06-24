@@ -90,11 +90,11 @@ nav {
  }
 }
 header .hamburger {
- width: 30px;
+ width: 40px;
  cursor: pointer;
- position: fixed;
+ position: absolute;
  z-index: 999;
- margin: 10px;
+ margin: 10px 30px;
 }
 nav div.col-9 {
  gap: 29px;
@@ -204,12 +204,17 @@ nav.hidden {
  color: var(--color6);
 }
 .card1 .desc {
- padding: 24px 40px;
- background: linear-gradient( rgba(0, 0, 0, 0), black);
- width: 100%;
- border-radius: 0 0 20px 20px;
- transition: 0.5s ease-in-out;
- min-height: 100px;
+ padding: 10px 20px;
+}
+@media (min-width: 767.98px) {
+  .card1 .desc {
+    padding: 24px 40px;
+    background: linear-gradient( rgba(0, 0, 0, 0), black);
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    transition: 0.5s ease-in-out;
+    min-height: 100px;
+   }
 }
 .card1:hover .desc {
  min-height: 70%;
@@ -269,6 +274,40 @@ nav.hidden {
  justify-content: flex-end;
 }
 
+/* card3 */
+.card3 {
+  padding: 12px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--color7);
+  border-radius: 20px;
+  max-width: 302px;
+  box-shadow: 0px 0px rgba(0, 0, 0, 0);
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
+ }
+.card3 img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+ }
+.card3 p {
+  color: var(--color5);
+  margin-top: 14px;
+ }
+.card3 h5 {
+  color: var(--color4);
+  margin-top: 22px;
+  margin: 0;
+ }
+.card3 h6 {
+  color: var(--color5);
+ }
 /* swiper */
 .swiper {
   width: 100%;
@@ -304,6 +343,32 @@ nav.hidden {
 .input1 > * {
  color: var(--color1);
 }
+
+/* button to up */
+#scrollButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color1);
+  border: none;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+  z-index: 99;
+}
+
+#scrollButton svg {
+  display: block;
+  margin: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+#scrollButton:hover svg {
+  transform: translateY(-3px);
+}
+
 /* footer */
 footer h2 {
  color: var(--color2);
@@ -317,7 +382,7 @@ footer .banner3 {
 }
 footer .banner3-main {
  background-image: url('/src/img/bg-banner3.png');
- background-attachment: fixed;
+ background-size: cover;
  padding:20px 10px;
 }
 @media (min-width: 767.98px) {
@@ -592,39 +657,6 @@ color: var(--color1);
  justify-content: center;
  align-items: center;
 }
-.testimoni .item {
- padding: 12px 30px;
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- text-align: center;
- background-color: var(--color7);
- border-radius: 20px;
- max-width: 302px;
- box-shadow: 0px 0px rgba(0, 0, 0, 0);
- transition: 0.25s ease-in-out;
- cursor: pointer;
-}
-.testimoni .item img {
- object-fit: cover;
- width: 100%;
- height: 200px;
- width: 200px;
- border-radius: 100%;
-}
-.testimoni .item p {
- color: var(--color5);
- margin-top: 14px;
-}
-.testimoni .item h5 {
- color: var(--color4);
- margin-top: 22px;
- margin: 0;
-}
-.testimoni .item h6 {
- color: var(--color5);
-}
 .testimoni .beranda-swiper-pagination-testimoni {
  margin: auto;
  display: flex;
@@ -638,7 +670,7 @@ color: var(--color1);
 .testimoni .swiper-pagination-bullet-active {
  background: var(--color5);
 }
-.testimoni .swiper-slide-next .item {
+.testimoni .swiper-slide-next .card3 {
  transform: scale(1.2);
  box-shadow: var(--shadow-gray-1);
 }
