@@ -79,6 +79,19 @@ font-size: 1rem;
 body {
  background-color: var(--color3);
 }
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* animate-loading */
+.animate-loading {
+  animation: animate-loading 2s infinite;
+  fill: var(--color1);
+}
 /* ui components */
 /* navbar */
 nav {
@@ -196,11 +209,11 @@ nav.hidden {
  /* justify-content: flex-end; */
  align-items: end;
  border-radius: 20px;
- min-height: 252px;
+ min-height: 50vh;
  width: 100%;
 }
 .card1:hover .warp {
- background-size: 150% 150%;
+ background-size: 120% 120%;
 }
 .card1 h6 {
  color: var(--color7);

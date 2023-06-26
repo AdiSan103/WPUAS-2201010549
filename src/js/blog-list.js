@@ -5,6 +5,7 @@ var app = new Vue({
     searchQuery: "laptop",
     dataNews: [],
     isNavHidden: true,
+    isLoading: false,
   },
   mounted() {
     AOS.init(); // Initialize AOS when the Vue component is mounted
@@ -18,6 +19,7 @@ var app = new Vue({
     // to get data by axios
     fetchData() {
       // for dataProject
+      this.isLoading = true; // Display loading state
       axios
         .get(
           `https://api.unsplash.com/search/photos?page=1&query=${this.searchQuery}&client_id=${APIKey}`
@@ -28,6 +30,9 @@ var app = new Vue({
         })
         .catch((error) => {
           console.log(error);
+        })
+        .finally(() => {
+          this.isLoading = false; // Hide loading state
         });
     },
   },
