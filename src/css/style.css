@@ -193,7 +193,7 @@ nav.hidden {
  background-repeat: no-repeat;
  background-size: 100% 100%;
  display: flex;
- justify-content: flex-end;
+ /* justify-content: flex-end; */
  align-items: end;
  border-radius: 20px;
  min-height: 252px;
@@ -242,13 +242,26 @@ nav.hidden {
  cursor: pointer;
 }
 .card2 img.item-img {
- border-radius: 20px;
+  min-width: 200px;
+  border-radius: 20px;
+  height: 300px;
+  width: 100%;
+  /* min-width: 400px; */
 }
+
+@media (min-width: 500px) {
+  .card2 img.item-img {
+    height: 350px;
+    min-width: 350px;
+  }
+}
+
 .card2:hover {
  box-shadow: var(--shadow-gray-2);
 }
 .card2 img {
  width: 100%;
+ /* object-fit: cover; */
 }
 .card2 .desc {
  margin-bottom: 45px;

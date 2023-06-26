@@ -1,5 +1,17 @@
 // api key
 let APIKey = "Jk8J4Waw08i_q2Ickqbcnd03MCQk0GZuGVOaYiQtJSk";
+
+// navbar
+let hamburgerMenu = document.querySelector(".hamburger");
+let nav = document.querySelector("nav");
+hamburgerMenu.addEventListener("click", () => {
+  if (nav.classList.contains("hidden")) {
+    nav.classList.remove("hidden");
+  } else {
+    nav.classList.add("hidden");
+  }
+});
+
 // button to up
 window.onscroll = function () {
   scrollFunction();

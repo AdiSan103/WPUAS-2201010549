@@ -26,10 +26,11 @@
   <div id="app">
     <header>
       <!-- hamburger -->
-      <div class="hamburger">
+      <div class="hamburger" @click="toggleNav">
         <img src="/src/img/icon-hamburger-menu.svg" alt="">
       </div>
-      <nav class="hidden">
+      <!-- <nav class="hidden"> -->
+      <nav :class="{ hidden: isNavHidden }">
         <div class="container">
           <!-- menu -->
           <div class="row">
@@ -242,12 +243,12 @@
             <div class="col-md-6 col-12">
               <!-- main-card -->
               <div class="card1">
-                <a href="#" class="warp" :style="{ 'backgroundImage': 'url(' + this.response[0].urls.regular + ')' }">
+                <a href="#" class="warp" :style="{ 'backgroundImage': 'url(' + dataProject[0].urls.regular + ')' }">
                   <div class="desc">
                     <div class="row">
                       <div class="col-md-8 col-12">
-                        <h6>{{ this.response[0].tags[0].title}}</h6>
-                        <p>{{ this.response[0].alt_description }}</p>
+                        <h6>{{ dataProject[0].tags[0].title}}</h6>
+                        <p>{{ dataProject[0].alt_description }}</p>
                       </div>
                       <div class="col-md-4 col-12 button d-md-block d-none">
                         <button class="btn btn-outline-light">Let's Work</button>
@@ -264,13 +265,12 @@
                 <!-- card -->
                 <div class="col-12">
                   <div class="card1">
-                    <a href="#" class="warp"
-                      :style="{ 'backgroundImage': 'url(' + this.response[1].urls.regular + ')' }">
+                    <a href="#" class="warp" :style="{ 'backgroundImage': 'url(' + dataProject[1].urls.regular + ')' }">
                       <div class="desc">
                         <div class="row">
                           <div class="col-10">
-                            <h6>{{ this.response[1].tags[0].title }}</h6>
-                            <p>{{ this.response[1].alt_description }}
+                            <h6>{{ dataProject[1].tags[0].title }}</h6>
+                            <p>{{ dataProject[1].alt_description }}
                             </p>
                           </div>
                         </div>
@@ -281,13 +281,12 @@
                 <!-- card -->
                 <div class="col-12">
                   <div class="card1">
-                    <a href="#" class="warp"
-                      :style="{ 'backgroundImage': 'url(' + this.response[2].urls.regular + ')' }">
+                    <a href="#" class="warp" :style="{ 'backgroundImage': 'url(' + dataProject[2].urls.regular + ')' }">
                       <div class="desc">
                         <div class="row">
                           <div class="col-10">
-                            <h6>{{ this.response[2].tags[0].title}}</h6>
-                            <p>{{ this.response[2].alt_description }}
+                            <h6>{{ dataProject[2].tags[0].title}}</h6>
+                            <p>{{ dataProject[2].alt_description }}
                             </p>
                           </div>
                         </div>
@@ -301,7 +300,7 @@
           <!-- items-next-row -->
           <div class="row">
             <!-- card -->
-            <div class="col-md-6 col-12" v-for="item in this.responseStartIndex3" :key="item.id">
+            <div class="col-md-6 col-12" v-for="item in this.dataProjectStartIndex3" :key="item.id">
               <div class="card1">
                 <a href="#" class="warp" :style="{ 'backgroundImage': 'url(' + item.urls.regular + ')' }">
                   <div class=" desc">
@@ -341,63 +340,14 @@
           <!-- swiper-items -->
           <div class="swiper beranda-mySwiper-testimoni">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
+              <div class="swiper-slide" v-for="item in this.dataProject" :key="item.id">
                 <div class="card3">
-                  <img src="/src/img/person.jpg" alt="">
+                  <img :src=item.user.profile_image.large alt="">
                   <div class="desc">
-                    <p class="smalltext">Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov
-                      astrobel sar direlig.
+                    <p class="smalltext">{{ item.user.name}}
                     </p>
-                    <h5 class="bodytext">Arwin Smith</h5>
-                    <h6 class="smalltext">CEO</h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card3">
-                  <img src="/src/img/person.jpg" alt="">
-                  <div class="desc">
-                    <p class="smalltext">Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov
-                      astrobel sar direlig.
-                    </p>
-                    <h5 class="bodytext">Arwin Smith</h5>
-                    <h6 class="smalltext">CEO</h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card3">
-                  <img src="/src/img/person.jpg" alt="">
-                  <div class="desc">
-                    <p class="smalltext">Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov
-                      astrobel sar direlig.
-                    </p>
-                    <h5 class="bodytext">Arwin Smith</h5>
-                    <h6 class="smalltext">CEO</h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card3">
-                  <img src="/src/img/person.jpg" alt="">
-                  <div class="desc">
-                    <p class="smalltext">Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov
-                      astrobel sar direlig.
-                    </p>
-                    <h5 class="bodytext">Arwin Smith</h5>
-                    <h6 class="smalltext">CEO</h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card3">
-                  <img src="/src/img/person.jpg" alt="">
-                  <div class="desc">
-                    <p class="smalltext">Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov
-                      astrobel sar direlig.
-                    </p>
-                    <h5 class="bodytext">Arwin Smith</h5>
-                    <h6 class="smalltext">CEO</h6>
+                    <h5 class="bodytext">{{ item.user.bio }}</h5>
+                    <h6 class="smalltext">@{{ item.user.instagram_username }}</h6>
                   </div>
                 </div>
               </div>
@@ -420,38 +370,40 @@
           <!-- swiper-items -->
           <div class="swiper beranda-mySwiper-news">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" v-for="item in this.response" :key="item.id">
-                <a href="blog-detail.html" class="card2">
-                  <img :src=item.urls.regular alt="" class="item-img">
-                  <div class="contain">
-                    <!-- desc -->
-                    <div class="desc">
-                      <h3 class="heading5">{{ item.tags[0].title}}</h3>
-                      <h4 class="smalltext">{{ item.alt_description }}</h4>
-                    </div>
-                    <!-- action -->
-                    <p>7 min read <img src="/src/img/icon-pointer.svg" class="pointer" alt=""> {{ item.updated_at }}
-                    </p>
-                    <div class="row">
-                      <!-- action-left -->
-                      <div class="col-5 left">
-                        <div class="row">
-                          <!-- icon-like -->
-                          <div class="col-6 action">
-                            <img src="/src/img/icon-like-hand.svg" alt="">
-                            <span class="smallertext">{{ item.likes }}</span>
-                          </div>
-                          <!-- icon-comment -->
-                          <div class="col-6 action">
-                            <img src="/src/img/icon-chat.svg" alt="">
-                            <span class="smallertext">{{ item.likes }}</span>
+              <div class="swiper-slide" v-for="item in this.dataNews" :key="item.id">
+                <a href="blog-detail.html">
+                  <div class="card2">
+                    <img :src=item.urls.regular alt="" class="item-img">
+                    <div class="contain">
+                      <!-- desc -->
+                      <div class="desc">
+                        <h3 class="heading5">{{ item.tags[0].title}}</h3>
+                        <h4 class="smalltext">{{ item.alt_description }}</h4>
+                      </div>
+                      <!-- action -->
+                      <p>7 min read <img src="/src/img/icon-pointer.svg" class="pointer" alt=""> {{ item.updated_at }}
+                      </p>
+                      <div class="row">
+                        <!-- action-left -->
+                        <div class="col-5 left">
+                          <div class="row">
+                            <!-- icon-like -->
+                            <div class="col-6 action">
+                              <img src="/src/img/icon-like-hand.svg" alt="">
+                              <span class="smallertext">{{ item.likes }}</span>
+                            </div>
+                            <!-- icon-comment -->
+                            <div class="col-6 action">
+                              <img src="/src/img/icon-chat.svg" alt="">
+                              <span class="smallertext">{{ item.likes }}</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <!-- action-right -->
-                      <div class="col-5 right">
-                        <div class="action">
-                          <img src="/src/img/icon-bookmark.svg" alt="">
+                        <!-- action-right -->
+                        <div class="col-5 right">
+                          <div class="action">
+                            <img src="/src/img/icon-bookmark.svg" alt="">
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -492,11 +444,11 @@
         <div class="main">
           <div class="row gap-2">
             <div class="col item" :style="{ 'backgroundImage': 'url(' + item.urls.regular + ')' }"
-              v-for="item in this.response" :key="item.id"></div>
+              v-for="item in this.dataInspiration1" :key="item.id"></div>
           </div>
           <div class="row gap-1">
             <div class="col item" :style="{ 'backgroundImage': 'url(' + item.urls.regular + ')' }"
-              v-for="item in this.response" :key="item.id"></div>
+              v-for="item in this.dataInspiration2" :key="item.id"></div>
           </div>
         </div>
       </section>
@@ -578,14 +530,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
-  <!-- vue js cdn -->
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <!-- aos  js -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- script js for navbar  -->
   <script src="/src/js/script.js"></script>
-  <!-- core js -->
+  <!-- vue js cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- vue js -->
   <script src="/src/js/index.js"></script>
 </body>
 

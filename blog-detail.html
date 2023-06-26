@@ -13,6 +13,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <!-- aos js -->
@@ -24,10 +26,11 @@
 <body>
   <header>
     <!-- hamburger -->
-    <div class="hamburger">
+    <div class="hamburger" @click="toggleNav">
       <img src="/src/img/icon-hamburger-menu.svg" alt="">
     </div>
-    <nav class="hidden">
+    <!-- <nav class="hidden"> -->
+    <nav :class="{ hidden: isNavHidden }">
       <div class="container">
         <!-- menu -->
         <div class="row">
@@ -64,6 +67,14 @@
     </nav>
   </header>
   <main class="bd">
+    <!-- button to up -->
+    <button id="scrollButton" onclick="scrollToTop()">
+      <svg width="20" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5">
+        </path>
+      </svg>
+    </button>
     <section class="container">
       <div class="bd-title">
         <h6 class="heading5">BLOG TIPS & TRICK</h6>
@@ -242,11 +253,15 @@
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <!-- aos  js -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <!-- javascript source -->
+  <!-- script js for navbar  -->
   <script src="/src/js/script.js"></script>
+  <!-- vue js cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- vue js -->
+  <script src="/src/js/index.js"></script>
 </body>
 
 </html>
