@@ -371,7 +371,7 @@
           <div class="swiper beranda-mySwiper-news">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="item in this.dataNews" :key="item.id">
-                <a href="blog-detail.html">
+                <a :href='"blog-detail.html?id=" + item.id'>
                   <div class="card2">
                     <img :src=item.urls.regular alt="" class="item-img">
                     <div class="contain">
